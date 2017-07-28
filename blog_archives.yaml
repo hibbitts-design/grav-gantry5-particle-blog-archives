@@ -1,0 +1,38 @@
+name: Blog Archives
+description: Blog Tags for Grav Archives Plugin
+type: particle
+icon: fa-university
+
+dependencies:
+  platform:
+    grav:
+      plugin:
+        archives: true
+
+form:
+  fields:
+    enabled:
+      type: checkbox
+      label: Enabled
+      description: Globally enable Archives particles.
+      default: true
+
+    header_text:
+      type: input.text
+      size: medium
+      label: Header
+      default: 'Archives'
+      help: Enter the header text.
+      description: Enter the header text.
+      validate:
+          type: text
+
+    blog_root:
+      type: input.text
+      size: medium
+      label: Blog Root
+      default: 'blog'
+      help: Enter the blog page for the site.
+      description: Enter the blog page for the site.
+      validate:
+          type: text

@@ -1,0 +1,11 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+{% if config.plugins.archives.enabled and (particle.blog_root in page.route or page.slug == particle.blog_root) %}
+  <div class="blog_archives {{ particle.css.class }}">
+  {% set new_base_url = base_url_relative ~ "/" ~ particle.blog_root %}
+  <h4>{{particle.header_text}}</h4>
+  {% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
+  </div>
+{% endif %}
+{% endblock %}
